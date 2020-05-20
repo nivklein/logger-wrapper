@@ -147,7 +147,7 @@ func WithFields(keyValues Fields) Logger {
 func initLogger() {
 	doOnce.Do(func() {
 		if os.Getenv(EnvKeyEnv) == "prod" {
-			DefaultConfig.ConsoleLevel = Warn
+			DefaultConfig.ConsoleLevel = Info
 		}
 		err := NewLogger(DefaultConfig, InstanceZapLogger)
 		if err != nil {
